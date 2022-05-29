@@ -1,5 +1,4 @@
 import socket, time, argparse, sys, random
-from typing import Type
 from helper import *
 
 VICTIM, PORT, SOCKET_COUNT = None, None, None
